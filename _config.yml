@@ -1,0 +1,6 @@
+highlighter: #pygments: true
+encoding: utf-8
+exclude: [vagrant/]
+version: HEAD
+redcloth:
+  hard_breaks: false

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+	{% include head.html %}
+	<body>
+		<div class="container">
+			{% include top-nav.html %}
+
+			<div class="row">
+				<div class="col-md-7">
+					&nbsp;
+				</div>
+				<div class="col-md-3">
+					Sist endret {% git_changed_time tag=site.version %}
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9" role="main">
+					{{ content }}
+				</div>
+				{% include side-nav.html %}
+			</div>
+
+			{% include footer.html %}
+		</div>
+		{% include script.html %}
+	</body>
+</html>

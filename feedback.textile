@@ -1,0 +1,17 @@
+---
+layout: default
+title: Begrepskatalog for felleskomponenter forvaltet av Difi - Tilbakemeldinger
+headtitle: Begrepskatalog for felleskomponenter forvaltet av Difi - 
+---
+
+Hver enkelt tjeneste i begrepskatalogen har sitt dedikerte GitHub område der man kan gi tilbakemelding:
+
+* "ID-porten":https://github.com/difi/begrep-ID-porten/issues
+* "Oppslagstjenesten":https://github.com/difi/begrep-Oppslagstjenesten/issues
+* "Sikker digital post":https://github.com/difi/begrep-SikkerDigitalPost/issues
+
+Ved generelle eller andre tilbakemeldinger kan man benytte
+
+* "Felles":https://github.com/difi/begrep-Felles/issues
+
+Alle tilbakemeldinger/spørsmål/kommentarer blir liggende åpent tilgjengelig i GitHub sin Issue-tracker.
