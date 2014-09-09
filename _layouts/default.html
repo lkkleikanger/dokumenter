@@ -4,21 +4,17 @@
 	<body>
 		<div class="container">
 			{% include top-nav.html %}
-
 			<div class="row">
-				<div class="col-md-7">
-					&nbsp;
-				</div>
-				<div class="col-md-3">
-					Sist endret {% git_changed_time tag=site.version %}
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-9" role="main">
-					{{ content }}
-				</div>
-				{% include side-nav.html %}
+				{% if showSideNav %}
+					<div class="col-md-9" role="main">
+						{{ content }}
+					</div>
+					{% include side-nav.html %}
+				{% else %}
+					<div class="col-md-12" role="main">
+						{{ content }}
+					</div>
+				{% endif %}
 			</div>
 
 			{% include footer.html %}

@@ -1,31 +1,29 @@
-{% if showSideNav %}
-	<div class="col-md-3">
-		<div class="bs-docs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="200">
-			<ul class="nav bs-docs-sidenav">
-				{% for l1 in rootPage.children %}
-					{% assign active = false %}
-					{% if l1.page.id == page.id %}
-						{% assign active = true %}
-					{% endif %}
-					{% if l1.page.children %}
-						{% for l2 in l1.page.children %}
-							{% if l2.page.id == page.id %}
-								{% assign active = true %}
-							{% endif %}
-						{% endfor %}
-					{% endif %}
+<div class="col-md-3">
+	<div class="bs-docs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="200">
+		<ul class="nav bs-docs-sidenav">
+			{% for l1 in rootPage.children %}
+				{% assign active = false %}
+				{% if l1.page.id == page.id %}
+					{% assign active = true %}
+				{% endif %}
+				{% if l1.page.children %}
+					{% for l2 in l1.page.children %}
+						{% if l2.page.id == page.id %}
+							{% assign active = true %}
+						{% endif %}
+					{% endfor %}
+				{% endif %}
 
-					<li{% if active %} class="active"{%endif%}><a href="{{l1.page.url | remove:".html"| remove:"/index" | replace: gitrepoFolder, rootUrl | replace: siteDouble, site.version}}">{{l1.page.title}}</a>
-					{% if l1.page.children %}
-						<ul class="nav">
-							{% for l2 in l1.page.children %}
-								<li{% if l2.page.id == page.id %} class="active"{% endif %}><a href="{{l2.page.url | remove:".html"| remove:"/index" | replace: gitrepoFolder, rootUrl | replace: siteDouble, site.version }}">{{l2.page.title}}</a></li>
-							{% endfor %}
-						</ul>
-					{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
+				<li{% if active %} class="active"{%endif%}><a href="{{l1.page.url | remove:".html"| remove:"/index" | replace: gitrepoFolder, rootUrl | replace: siteDouble, site.version}}">{{l1.page.title}}</a>
+				{% if l1.page.children %}
+					<ul class="nav">
+						{% for l2 in l1.page.children %}
+							<li{% if l2.page.id == page.id %} class="active"{% endif %}><a href="{{l2.page.url | remove:".html"| remove:"/index" | replace: gitrepoFolder, rootUrl | replace: siteDouble, site.version }}">{{l2.page.title}}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
 	</div>
-{% endif %}
+</div>
